@@ -1,0 +1,17 @@
+var myImage = document.getElementById("mainImage");
+
+var imageArray = ["images/carousel1.jpg", "images/carousel2.jpg", "images/carousel3.jpg", "images/carousel5.jpg", "images/linkedin.jpg"];
+
+var x = 0;
+
+function changeImage() {
+	myImage.setAttribute("src", imageArray[x]);
+	x++;
+	console.log(x);
+	if (x >= imageArray.length) {
+		x = 0;
+		console.log('restart slider');
+	}
+}
+
+var intervalHandle = setInterval(changeImage, 4000);
